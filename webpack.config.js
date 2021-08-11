@@ -9,24 +9,19 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, distPath),
-    publicPath: '/js',
   },
 
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
 
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },
       },
     ],
-  },
-
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
   },
 };
